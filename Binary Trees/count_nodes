@@ -1,0 +1,13 @@
+#include "BinaryTreeNode.h"
+#include<iostream>
+#include<queue>
+using namespace std;
+
+
+int countnodes(BinaryTreeNode<int>* root)
+{
+	if (!root)
+		return 0;
+
+	return 1 + countnodes(root->left) + countnodes(root->right);
+}
