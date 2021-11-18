@@ -1,0 +1,24 @@
+
+#include "BinaryTreeNode.h"
+#include<iostream>
+#include<queue>
+using namespace std;
+
+
+bool isNodePresent(BinaryTreeNode<int> *root, int x)
+{
+	if (!root)
+		return false;
+
+	if (root->data == x)
+		return true;
+
+	if (isNodePresent(root->left, x))
+		return true;
+
+	if (isNodePresent(root->right, x))
+		return true;
+
+	return false;
+
+}
