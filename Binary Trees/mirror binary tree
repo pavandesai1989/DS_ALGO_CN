@@ -1,0 +1,23 @@
+#include "BinaryTreeNode.h"
+#include<iostream>
+#include<queue>
+using namespace std;
+
+
+void swap(BinaryTreeNode<int>* root)
+{
+	if (!root)  return;
+
+	swap(root->left);
+	swap(root->right);
+
+	BinaryTreeNode<int>* temp = root->left;
+	root->left = root->right;
+	root->right = temp;
+}
+
+
+void mirrorBinaryTree(BinaryTreeNode<int>* root)
+{
+	swap(root);
+}
