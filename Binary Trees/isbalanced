@@ -1,0 +1,27 @@
+#include "BinaryTreeNode.h"
+#include<iostream>
+#include<queue>
+using namespace std;
+
+
+//O(N) solution
+int getheight(BinaryTreeNode<int> *root)
+{
+	if (!root) return 0;
+
+	int leftheight = getheight(root->left);
+	int rightheight = getheight(root->right);
+
+	if (abs(leftheight - rightheight) > 1)  return -1;
+
+	return 1 + leftheight + rightheight;
+
+}
+
+bool isBalanced(BinaryTreeNode<int> *root)
+{
+	if (getheight(root) == -1)
+		return false;
+	else
+		return true;
+}
