@@ -34,7 +34,7 @@ bool isBalanced(BinaryTreeNode<int> *root)
     return 0;
 }
 
-
+/************************************************************/
 //O(N) solution
 int getheight(BinaryTreeNode<int> *root)
 {
