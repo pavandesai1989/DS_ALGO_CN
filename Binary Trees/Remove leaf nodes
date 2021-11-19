@@ -1,0 +1,25 @@
+#include "BinaryTreeNode.h"
+#include<iostream>
+#include<queue>
+using namespace std;
+
+
+BinaryTreeNode<int>* removeLeafNodes(BinaryTreeNode<int> *root)
+{
+	//base case
+	if (!root)   return NULL;
+
+	//code for root
+	if (root->left == NULL && root->right == NULL)
+		return NULL;
+
+	//call on left and right sub tree
+	BinaryTreeNode<int>* leftchild = removeLeafNodes(root->left);
+	BinaryTreeNode<int>* rightchild = removeLeafNodes(root->right);
+
+	//attach new tree to root
+	root->left = leftchild;
+	root->right = rightchild;
+
+	return root;
+}
